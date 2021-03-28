@@ -508,7 +508,15 @@ my $localTest = ((caller(1))[0]//'Asm::C') eq "Asm::C";                         
 
 Test::More->builder->output("/dev/null") if $localTest;                         # Reduce number of confirmation messages during testing
 
-if ($^O =~ m(bsd|linux)i) {plan tests => 17}                                    # Supported systems
+if ($^O =~ m(bsd|linux)i)
+  {if (confirmHasCommandLineCommand(q(gcc))
+   &&  confirmHasCommandLineCommand(q(readelf)))
+    {plan tests => 17
+    }
+  else
+   {plan skip_all =>qq(gcc or readelf missing on: $^O);
+   }
+ }
 else
  {plan skip_all =>qq(Not supported on: $^O);
  }
