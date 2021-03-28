@@ -1,0 +1,10 @@
+# Extract macro values and structure details from C programs.
+
+![Test](https://github.com/philiprbrenan/AsmC/workflows/Test/badge.svg)
+
+This perl module extracts macro values and structure details from C programs.
+
+The githubaction in this repo shows how to install and use this module.
+
+Test cases can be seen at the end of **lib/Asm/C.pm**.  The test cases are
+run by the githubaction.
