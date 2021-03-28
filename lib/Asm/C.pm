@@ -5,7 +5,7 @@
 #-------------------------------------------------------------------------------
 # podDocumentation
 package Asm::C;
-our $VERSION = "20210328";
+our $VERSION = "20210329";
 use warnings FATAL => qw(all);
 use strict;
 use Carp;
@@ -500,7 +500,7 @@ test unless caller;
 
 1;
 # podDocumentation
-#__DATA__
+__DATA__
 use Time::HiRes qw(time);
 use Test::More;
 
