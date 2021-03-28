@@ -1,0 +1,25 @@
+# Test NasmX86 2021-03-28 at 22:27:57
+
+name: Test
+
+on:
+  push
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Install Data::Table::Text
+      run: |
+        sudo cpan install -T Data::Table::Text
+
+    - name: Install GCC
+      run: |
+        sudo apt install build-essesntial
+
+    - name: Test
+      run: |
+        perl lib/Asm/C.pm
