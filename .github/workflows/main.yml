@@ -1,4 +1,4 @@
-# Test NasmX86 2021-03-28 at 22:56:08
+# Test NasmX86 2021-03-28 at 22:58:26
 
 name: Test
 
@@ -18,7 +18,7 @@ jobs:
 
     - name: Install GCC
       run: |
-        sudo apt install build-essesntial
+        sudo apt install build-essential
 
     - name: Test
       run: |
