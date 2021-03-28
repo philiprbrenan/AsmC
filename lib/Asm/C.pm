@@ -160,7 +160,7 @@ sub extractMacroDefinitionsFromCHeaderFile($)                                   
 
 sub extractMacroDefinitionFromCHeaderFile($$)                                   # Extract a macro definitions found in a C header file using gcc
  {my ($includeFile, $macro) = @_;                                               # C Header file name as it would be entered in a C program, macro name
-  if (my $d = extractMacroDefinitionsFromCHeaderFile($includeFile))             # Get macro definitrions
+  if (my $d = extractMacroDefinitionsFromCHeaderFile($includeFile))             # Get macro definitions
    {return $$d{$macro};
    }
   undef
@@ -263,10 +263,10 @@ Extract the details of a structure
 B<Example:>
 
 
-  
+
     is_deeply extractCStructure($input),                                            # 𝗘𝘅𝗮𝗺𝗽𝗹𝗲
 
-  
+
 
 =head3 extractCField($input, $structure, $field)
 
@@ -280,14 +280,14 @@ Extract the details of a field in a structure in a C file
 B<Example:>
 
 
-  if (1)                                                                                
+  if (1)
    {my $input = writeTempFile <<END;
   struct S
    {int a;
     int b;
     int c;
    } s;
-  
+
 
 =head3 extractCFieldLoc($input, $structure, $field)
 
@@ -301,14 +301,14 @@ Extract the offset to the location of a field in a structure in a C file
 B<Example:>
 
 
-  if (1)                                                                                
+  if (1)
    {my $input = writeTempFile <<END;
   struct S
    {int a;
     int b;
     int c;
    } s;
-  
+
 
 =head3 extractCFieldSize($input, $structure, $field)
 
@@ -322,14 +322,14 @@ Extract the size of a field in a structure in a C file
 B<Example:>
 
 
-  if (1)                                                                                
+  if (1)
    {my $input = writeTempFile <<END;
   struct S
    {int a;
     int b;
     int c;
    } s;
-  
+
 
 =head3 extractCFieldType($input, $structure, $field)
 
@@ -343,14 +343,14 @@ Extract the type of a field in a structure in a C file
 B<Example:>
 
 
-  if (1)                                                                                
+  if (1)
    {my $input = writeTempFile <<END;
   struct S
    {int a;
     int b;
     int c;
    } s;
-  
+
 
 =head3 extractCStructureFields($input, $structure)
 
@@ -363,14 +363,14 @@ Extract the names of the fields in a C structure
 B<Example:>
 
 
-  if (1)                                                                                
+  if (1)
    {my $input = writeTempFile <<END;
   struct S
    {int a;
     int b;
     int c;
    } s;
-  
+
 
 =head3 extractCStructureSize($input, $structure)
 
@@ -383,14 +383,14 @@ Extract the size of a C structure
 B<Example:>
 
 
-  if (1)                                                                                
+  if (1)
    {my $input = writeTempFile <<END;
   struct S
    {int a;
     int b;
     int c;
    } s;
-  
+
 
 =head2 Macros
 
@@ -406,15 +406,15 @@ Extract the macro definitions found in a C header file using gcc
 B<Example:>
 
 
-  if (1)                                                                           
+  if (1)
    {my $h = "linux/mman.h";
-  
+
     my $m = extractMacroDefinitionsFromCHeaderFile("linux/mman.h");  # 𝗘𝘅𝗮𝗺𝗽𝗹𝗲
 
     is_deeply $$m{MAP_ANONYMOUS}, "0x20";
     ok extractMacroDefinitionFromCHeaderFile("linux/mman.h", q(PROT_WRITE)) eq "0x2";
    }
-  
+
 
 =head3 extractMacroDefinitionFromCHeaderFile($includeFile, $macro)
 
@@ -427,15 +427,15 @@ Extract a macro definitions found in a C header file using gcc
 B<Example:>
 
 
-  if (1)                                                                           
+  if (1)
    {my $h = "linux/mman.h";
     my $m = extractMacroDefinitionsFromCHeaderFile("linux/mman.h");
     is_deeply $$m{MAP_ANONYMOUS}, "0x20";
-  
+
     ok extractMacroDefinitionFromCHeaderFile("linux/mman.h", q(PROT_WRITE)) eq "0x2";  # 𝗘𝘅𝗮𝗺𝗽𝗹𝗲
 
    }
-  
+
 
 
 =head1 Index
